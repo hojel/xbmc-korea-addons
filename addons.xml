@@ -119,7 +119,7 @@
 
 <addon id="plugin.video.ondemandkorea"
        name="Ondemand Korea"
-       version="0.3.3"
+       version="0.3.4"
        provider-name="XBMC-Korea">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
