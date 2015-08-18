@@ -1,0 +1,46 @@
+1.4.5
+
+Changes
+- add option to play Dailmotion video using plugin (thx Yuri Lee)
+
+1.4.0
+
+Changes
+- migrate framework to xbmcswift2
+- change video url resolver to script.module.youtube.dl
+
+1.2.4
+
+Changes
+- support new flvcd.com output format
+
+1.2.3
+
+Changes
+- prevent error by ad in column
+
+1.2.2
+
+Changes
+- support multi-lines in title
+
+
+1.2.1
+
+Changes
+- BeautifulSoup Library from common addon
+
+1.2.0
+
+Changes
+- Direct play upon selection
+
+1.1.4
+
+Changes
+- Change default setting
+
+1.1.3
+
+Changes
+- Initial addon version
