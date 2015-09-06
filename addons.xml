@@ -118,7 +118,7 @@
 
 <addon id="plugin.video.dabdate.com"
        name="Dabdate"
-       version="0.5.1"
+       version="0.5.2"
        provider-name="XBMC-Korea">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
