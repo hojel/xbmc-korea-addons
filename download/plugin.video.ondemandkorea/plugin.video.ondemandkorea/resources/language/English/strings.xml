@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <string id="30000">Ondemand Korea</string>
+    <string id="30001">Video Quality</string>
+    <string id="30002">Korean Page</string>
+    <string id="30003">MP4 Video</string>
+
+    <string id="30100">Prev Page</string>
+    <string id="30101">Next Page</string>
+    
+    <string id="30110">News</string>
+    <string id="30111">Drama</string>
+    <string id="30112">Variety</string>
+    <string id="30113">Documentary</string>
+    <string id="30114">Food</string>
+    <string id="30115">Beauty</string>
+    <string id="30116">Women</string>
+    <string id="30117">Health</string>
+    <string id="30118">Sports</string>
+    <string id="30119">Education</string>
+    <string id="30120">Economy</string>
+    <string id="30121">Religion</string>
+    <string id="30122">Hot Clip</string>
+    <string id="30123">Music</string>
+    <string id="30124">Game</string>
+</strings>
