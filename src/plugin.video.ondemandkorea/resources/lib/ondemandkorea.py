@@ -105,6 +105,9 @@ def parseEpisodePage2(page_url, page=1, koPage=True):
     videoid = re.compile('"videoid" *: *(\d+)').search(html).group(1)
     list_url = root_url+eplist_url.format(program=program, videoid=videoid, page=page)
     req = urllib2.Request(list_url, headers=global_hdr)
+    if koPage:
+        req.add_header('Accept-Langauge', 'ko')
+        req.add_header('Cookie', 'language=kr')
     #req.add_header('User-Agent', default_UA)
     jstr = urllib2.urlopen(req).read()
     obj = json.loads(jstr)
