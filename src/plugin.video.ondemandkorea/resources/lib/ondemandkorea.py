@@ -9,6 +9,7 @@ import urllib, urllib2
 import re
 import json
 from bs4 import BeautifulSoup
+from xbmcswift2 import Plugin
 import xml.etree.ElementTree as etree
 
 root_url = "http://www.ondemandkorea.com"
@@ -17,6 +18,11 @@ default_UA = "Mozilla/5.0 (Windows; U; MSIE 9.0; Windows NT 9.0; en-US)"
 tablet_UA = "Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Safari/535.19"
 
 eplist_url = "/includes/episode_page.php?cat={program:s}&id={videoid:s}&page={page:d}"
+global_hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
+       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+       'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
+       'Accept-Encoding': 'none',
+       'Connection': 'keep-alive'}
 
 bitrate2resolution = {
     196:'180p',
@@ -28,7 +34,7 @@ bitrate2resolution = {
 }
 
 def parseTop(koPage=True):
-    req  = urllib2.Request(page_url)
+    req  = urllib2.Request(page_url, headers=global_hdr)
     req.add_header('User-Agent', default_UA)
     if koPage:
         req.add_header('Accept-Langauge', 'ko')
@@ -41,7 +47,7 @@ def parseTop(koPage=True):
     return items
 
 def parseGenrePage(page_url, koPage=True):
-    req  = urllib2.Request(page_url)
+    req  = urllib2.Request(page_url, headers=global_hdr)
     req.add_header('User-Agent', default_UA)
     if koPage:
         req.add_header('Accept-Langauge', 'ko')
@@ -70,8 +76,7 @@ def parseGenrePage2(page_url, koPage=True):
     return items
 
 def parseEpisodePage(page_url, koPage=True):
-    req  = urllib2.Request(page_url)
-    req.add_header('User-Agent', default_UA)
+    req  = urllib2.Request(page_url, headers=global_hdr)
     if koPage:
         req.add_header('Accept-Langauge', 'ko')
         req.add_header('Cookie', 'language=kr')
@@ -91,8 +96,7 @@ def parseEpisodePage(page_url, koPage=True):
     return result
 
 def parseEpisodePage2(page_url, page=1, koPage=True):
-    req  = urllib2.Request(page_url)
-    req.add_header('User-Agent', default_UA)
+    req  = urllib2.Request(page_url, headers=global_hdr)
     if koPage:
         req.add_header('Accept-Langauge', 'ko')
         req.add_header('Cookie', 'language=kr')
@@ -100,8 +104,7 @@ def parseEpisodePage2(page_url, page=1, koPage=True):
     program = re.compile('"program" *: *"(.*?)"').search(html).group(1)
     videoid = re.compile('"videoid" *: *(\d+)').search(html).group(1)
     list_url = root_url+eplist_url.format(program=program, videoid=videoid, page=page)
-
-    req = urllib2.Request(list_url)
+    req = urllib2.Request(list_url, headers=global_hdr)
     #req.add_header('User-Agent', default_UA)
     jstr = urllib2.urlopen(req).read()
     obj = json.loads(jstr)
@@ -118,7 +121,7 @@ def parseEpisodePage2(page_url, page=1, koPage=True):
 # rtmp
 def extractStreamUrl(page_url, koPage=True):
     # loadPlayer()
-    req = urllib2.Request(page_url)
+    req = urllib2.Request(page_url, headers=global_hdr)
     req.add_header('User-Agent', default_UA)
     if koPage:
         req.add_header('Accept-Langauge', 'ko')
@@ -138,18 +141,17 @@ def extractStreamUrl(page_url, koPage=True):
         videos[ resolution ] = {'tcUrl':tcUrl, 'app':app, 'playpath':item.attrib['src']}
     return {'title':vid_title, 'videos':videos}
 
-# mp4
+# m3u8
 def extractVideoUrl(page_url, koPage=True):
-    req = urllib2.Request(page_url)
-    req.add_header('User-Agent', tablet_UA)
+    req = urllib2.Request(page_url, headers=global_hdr)
+#    req.add_header('User-Agent', tablet_UA)
     if koPage:
         req.add_header('Accept-Langauge', 'ko')
         req.add_header('Cookie', 'language=kr')
     html = urllib2.urlopen(req).read().decode('utf-8')
     vid_title = re.compile('<div id="title">(.*?)</div>', re.S).search(html).group(1).strip()
-    vid_url = re.compile("""(http[^'"]*mp4)""").search(html).group(1)
-    if 'vimeo' in vid_url:
-        vid_url = re.compile("""(http[^'"]*mp4\?.*[0-9])""").search(html).group(1)
+    #vid_url = re.compile('<video[^>]*src="([^"]*)"').search(html).group(1)
+    vid_url = re.compile("""(http[^'"]*m3u8)""").search(html, re.I | re.U).group(1)
     videos = dict()
     for bitrate, resolution in bitrate2resolution.iteritems():
         videos[resolution] = {'url':vid_url.replace('480p.1596k', resolution+'.'+str(bitrate)+'k')}
