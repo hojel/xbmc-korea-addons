@@ -94,7 +94,7 @@
 
 <addon id="plugin.video.baykoreans.net"
        name="BayKoreans"
-       version="1.4.7"
+       version="1.4.8"
        provider-name="XBMC-Korea">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
