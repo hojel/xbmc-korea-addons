@@ -70,7 +70,7 @@
 
 <addon id="metadata.tv.daum.net"
        name="Daum Movie"
-       version="2.3.1"
+       version="2.3.2"
        provider-name="XBMC-Korea">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
