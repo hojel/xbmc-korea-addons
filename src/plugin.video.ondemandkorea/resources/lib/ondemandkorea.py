@@ -69,8 +69,8 @@ def parseGenrePage2(page_url, koPage=True):
         req.add_header('Cookie', 'language=kr')
     html = urllib2.urlopen(req).read().decode("utf-8")
     items = []
-    for part in html.split('<div class="ep_box">')[1:]:
-        match = re.compile('<a href="([^"]*)" title="([^"]*)">.*<img src="([^"]*timthumb[^"]*)"', re.S).search(part)
+    for part in html.split('<div class="ep_box"')[1:]:
+        match = re.compile('<a href="([^"]*)" title="([^"]*)" class="poster_img_a">.*<img src="([^"]*timthumb[^"]*)"', re.S).search(part)
         if match:
             items.append({'title':match.group(2), 'url':root_url+"/"+match.group(1), 'thumbnail':match.group(3)})
     return items
