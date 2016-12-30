@@ -185,7 +185,7 @@
 
 <addon id="plugin.video.tvbayo"
        name="TVBayo"
-       version="1.0.0"
+       version="1.0"
        provider-name="edge">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
