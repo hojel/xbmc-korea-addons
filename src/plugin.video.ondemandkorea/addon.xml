@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.ondemandkorea"
+       name="Ondemand Korea"
+       version="0.3.4c"
+       provider-name="XBMC-Korea">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.xbmcswift2" version="2.4.0"/>
+    <import addon="script.module.beautifulsoup4" version="4.3.2"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+             library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">OndemandKorea</summary>
+    <summary lang="ko">온디맨드 코리아</summary>
+    <description lang="en">Watch drama provided by ondemandkorea.com</description>
+    <description lang="ko">ondemandkorea.com에서 제공하는 드라마 시청</description>
+    <platform>all</platform>
+  </extension>
+</addon>
