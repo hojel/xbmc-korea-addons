@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings>
+  <setting id="quality" type="enum" label="30001" values="180p|240p|300p|360p|480p|720p" default="2" />
+  <setting id="koPage" type="bool" label="30002" default="true" />
+  <setting id="mp4_url" type="bool" label="30003" default="true" />
+</settings>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <string id="30000">Ondemand Korea</string>
+    <string id="30001">비디오 화질</string>
+    <string id="30002">한국어</string>
+    <string id="30003">MP4 비디오</string>
+
+    <string id="30100">이전 페이지</string>
+    <string id="30101">다음 페이지</string>
+    
+    <string id="30110">뉴스</string>
+    <string id="30111">드라마</string>
+    <string id="30112">예능/오락</string>
+    <string id="30113">시사/타큐</string>
+    <string id="30114">음식</string>
+    <string id="30115">음식/요리</string>
+    <string id="30116">여성</string>
+    <string id="30117">건강</string>
+    <string id="30118">스포츠</string>
+    <string id="30119">교육</string>
+    <string id="30120">경제</string>
+    <string id="30121">종교</string>
+    <string id="30122">화제영상</string>
+    <string id="30123">음악</string>
+    <string id="30124">게임</string>
+</strings>

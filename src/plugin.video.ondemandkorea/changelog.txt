@@ -1,0 +1,29 @@
+0.3.4
+
+Modify
+- BeautifulSoup fail to handle grammar error in Genre page. Use regular expr instead.
+
+0.3.3
+
+Modify
+- reflect website change. JSON is used for episode page.
+
+0.3.2
+
+Modify
+- reflect website change
+
+0.3.1
+
+Modify
+- use BeautifulSoup4 instead of BeautifulSoup (3.x)
+
+0.3.0
+
+New
+- Setting: MP4 Video URL (instead of RTMP)
+
+0.1.0
+
+Changes
+- Initial addon version
