@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.movie.daum.python"
+       name="Daum Movie Python"
+       version="0.1.0"
+       provider-name="hojel">
+  <requires>
+    <import addon="xbmc.metadata" version="2.1.0"/>
+    <import addon="xbmc.python" version="2.26.0"/>
+    <import addon="script.module.requests" version="2.9.1"/>
+    <import addon="script.module.six" version="1.13.0"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.movies"
+             library="scraper.py"/>
+  <extension point="xbmc.addon.metadata">
+    <reuselanguageinvoker>true</reuselanguageinvoker>
+    <news>v0.1.0 (2020-04-01)
+- initial</news>
+    <summary lang="en_US">Python Daum Movie Scraper</summary>
+    <summary lang="ko_KR">다음 영화 정보수집기</summary>
+    <description lang="en_US">Download movie information from movie.daum.net</description>
+    <description lang="ko_KR">movie.daum.net에서 영화 정보 다운로드</description>
+    <platform>all</platform>
+    <website>https://movie.daum.net</website>
+    <source>https://github.com/hojel/metadata.movie.daum.net.python</source>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
+</addon>

@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
+<addon id="plugin.video.pooq" name="pooq tv" version="0.2.2" provider-name="AnAs">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+		<import addon="script.module.simplejson" version="3.3.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+    	<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">pooq for Kodi</summary>
+		<summary lang="kr">pooq for Kodi</summary>
+		<description lang="en">pooq Live and Vod service</description>
+		<description lang="kr">pooq Live 및 다시보기 서비스</description>
+		<language></language>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<email>irow14@gmail.com</email>
+	</extension>
+</addon>
+
 <addon id="metadata.albums.naver.com"
        name="Naver Music"
        version="1.1.2"
@@ -19,52 +39,6 @@
     <description lang="ko">music.naver.com 에서 음악앨범 정보 다운로드</description>
     <description lang="hu">Zene információk letöltése a music.naver.com webhelyről</description>
     <description lang="pt">Descarregar informação de música de music.naver.com</description>
-  </extension>
-</addon>
-
-<addon id="metadata.artists.naver.com"
-       name="Naver Music"
-       version="1.1.3"
-       provider-name="XBMC-Korea">
-  <requires>
-    <import addon="xbmc.metadata" version="1.0"/>
-  </requires>
-  <extension point="xbmc.metadata.scraper.artists"
-             language="ko"
-             library="naver-artists.xml"/>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">NAVER Music Artist Scraper</summary>
-    <summary lang="ko">네이버 음악가 스크래퍼</summary>
-    <summary lang="hu">NAVER Előadó scraper</summary>
-    <summary lang="pt">Scraper de música NAVER</summary>
-	<description lang="en">Download music artist information from music.naver.com</description>
-    <description lang="ko">music.naver.com 에서 음악가 정보 다운로드</description>
-    <description lang="hu">Zene információk letöltése a music.naver.com webhelyről</description>
-    <description lang="pt">Descarregar informação de música de music.naver.com</description>
-  </extension>
-</addon>
-
-<addon id="metadata.movie.daum.net"
-       name="Daum Movie"
-       version="2.1.2"
-       provider-name="XBMC-Korea">
-  <requires>
-    <import addon="xbmc.metadata" version="1.0"/>
-    <import addon="metadata.common.themoviedb.org" version="2.9" optional="true"/>
-  </requires>
-  <extension point="xbmc.metadata.scraper.movies"
-             language="ko"
-             library="daum-movie.xml"/>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Daum Movie Scraper</summary>
-    <summary lang="hu">Daum Film scraper</summary>
-    <summary lang="ko">다음 영화 스크래퍼</summary>
-    <summary lang="pt">Scraper de filmes Daum</summary>
-    <description lang="en">Download movie information from movie.daum.net</description>
-    <description lang="hu">Film információk letöltése a movie.daum.net webhelyről</description>
-    <description lang="kr">movie.daum.net에서 영화 정보 다운로드</description>
-    <description lang="pt">Descarregar informação de filmes de movie.daum.net</description>
-    <platform>all</platform>
   </extension>
 </addon>
 
@@ -92,6 +66,28 @@
   </extension>
 </addon>
 
+<addon id="plugin.video.tvbayo"
+       name="TVBayo"
+       version="1.0"
+       provider-name="edge">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.xbmcswift2" version="2.4.0"/>
+    <import addon="script.module.beautifulsoup4" version="4.3.2"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+             library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">TVBayo Streaming Service</summary>
+    <summary lang="ko">TVBayo 비디오 스트리밍 서비스</summary>
+    <description lang="en">Watch Korean TV shows in tvbayo.com</description>
+    <description lang="ko">TVBayo에서 제공하는 한국 TV프로를 볼 수 있습니다</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.baykoreans.net"
        name="BayKoreans"
        version="1.4.8"
@@ -116,39 +112,37 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.dabdate.com"
-       name="Dabdate"
-       version="0.5.3"
+<addon id="metadata.artists.naver.com"
+       name="Naver Music"
+       version="1.1.3"
        provider-name="XBMC-Korea">
   <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.xbmcswift2" version="2.4.0"/>
-    <import addon="script.module.beautifulsoup4" version="4.3.2"/>
+    <import addon="xbmc.metadata" version="1.0"/>
   </requires>
-  <extension point="xbmc.python.pluginsource"
-             library="addon.py">
-        <provides>video</provides>
-  </extension>
+  <extension point="xbmc.metadata.scraper.artists"
+             language="ko"
+             library="naver-artists.xml"/>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">Dabdate Streaming Service</summary>
-    <summary lang="ko">댑데이트 비디오 스트리밍 서비스</summary>
-    <description lang="en">Watch Korean tv shows in dabdate.com.
-    It's required to change settings first before using it.
-    </description>
-    <description lang="ko">댑데이트(dabdate.com)에서 제공하는 한국 영화/드라마등을 볼 수 있습니다. 유료 컨텐츠는 회원으로 가입되어 있어야 사용할 수 있습니다.[CR]사이트가 해외유저 전용으로 국내에서는 사용할 수 없게 되어 있습니다.
-    </description>
-    <platform>all</platform>
+    <summary lang="en">NAVER Music Artist Scraper</summary>
+    <summary lang="ko">네이버 음악가 스크래퍼</summary>
+    <summary lang="hu">NAVER Előadó scraper</summary>
+    <summary lang="pt">Scraper de música NAVER</summary>
+	<description lang="en">Download music artist information from music.naver.com</description>
+    <description lang="ko">music.naver.com 에서 음악가 정보 다운로드</description>
+    <description lang="hu">Zene információk letöltése a music.naver.com webhelyről</description>
+    <description lang="pt">Descarregar informação de música de music.naver.com</description>
   </extension>
 </addon>
 
 <addon id="plugin.video.ondemandkorea"
        name="Ondemand Korea"
-       version="0.5.2"
+       version="0.6.0"
        provider-name="XBMC-Korea">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.xbmcswift2" version="2.4.0"/>
     <import addon="script.module.beautifulsoup4" version="4.3.2"/>
+    <import addon="script.module.requests" version="2.15.1"/>
   </requires>
   <extension point="xbmc.python.pluginsource"
              library="addon.py">
@@ -163,45 +157,32 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.pooq" name="pooq tv" version="0.2.2" provider-name="AnAs">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0"/>
-		<import addon="script.module.simplejson" version="3.3.0"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-    	<provides>video</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">pooq for Kodi</summary>
-		<summary lang="kr">pooq for Kodi</summary>
-		<description lang="en">pooq Live and Vod service</description>
-		<description lang="kr">pooq Live 및 다시보기 서비스</description>
-		<language></language>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-		<email>irow14@gmail.com</email>
-	</extension>
-</addon>
-
-<addon id="plugin.video.tvbayo"
-       name="TVBayo"
-       version="1.0"
-       provider-name="edge">
+<addon id="metadata.movie.daum.python"
+       name="Daum Movie Python"
+       version="0.1.0"
+       provider-name="hojel">
   <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.xbmcswift2" version="2.4.0"/>
-    <import addon="script.module.beautifulsoup4" version="4.3.2"/>
+    <import addon="xbmc.metadata" version="2.1.0"/>
+    <import addon="xbmc.python" version="2.26.0"/>
+    <import addon="script.module.requests" version="2.9.1"/>
+    <import addon="script.module.six" version="1.13.0"/>
   </requires>
-  <extension point="xbmc.python.pluginsource"
-             library="addon.py">
-    <provides>video</provides>
-  </extension>
+  <extension point="xbmc.metadata.scraper.movies"
+             library="scraper.py"/>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">TVBayo Streaming Service</summary>
-    <summary lang="ko">TVBayo 비디오 스트리밍 서비스</summary>
-    <description lang="en">Watch Korean TV shows in tvbayo.com</description>
-    <description lang="ko">TVBayo에서 제공하는 한국 TV프로를 볼 수 있습니다</description>
+    <reuselanguageinvoker>true</reuselanguageinvoker>
+    <news>v0.1.0 (2020-04-01)
+- initial</news>
+    <summary lang="en_US">Python Daum Movie Scraper</summary>
+    <summary lang="ko_KR">다음 영화 정보수집기</summary>
+    <description lang="en_US">Download movie information from movie.daum.net</description>
+    <description lang="ko_KR">movie.daum.net에서 영화 정보 다운로드</description>
     <platform>all</platform>
+    <website>https://movie.daum.net</website>
+    <source>https://github.com/hojel/metadata.movie.daum.net.python</source>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
   </extension>
 </addon>
 
@@ -227,6 +208,30 @@
     <website></website>
     <email></email>
     <source>https://github.com/hojel/service.subtitles.gomtv</source>
+  </extension>
+</addon>
+
+<addon id="metadata.movie.daum.net"
+       name="Daum Movie"
+       version="2.1.2"
+       provider-name="XBMC-Korea">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+    <import addon="metadata.common.themoviedb.org" version="2.9" optional="true"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.movies"
+             language="ko"
+             library="daum-movie.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Daum Movie Scraper</summary>
+    <summary lang="hu">Daum Film scraper</summary>
+    <summary lang="ko">다음 영화 스크래퍼</summary>
+    <summary lang="pt">Scraper de filmes Daum</summary>
+    <description lang="en">Download movie information from movie.daum.net</description>
+    <description lang="hu">Film információk letöltése a movie.daum.net webhelyről</description>
+    <description lang="kr">movie.daum.net에서 영화 정보 다운로드</description>
+    <description lang="pt">Descarregar informação de filmes de movie.daum.net</description>
+    <platform>all</platform>
   </extension>
 </addon>
 </addons>
